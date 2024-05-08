@@ -6,7 +6,7 @@ using Phoenix.NET.Interop;
 
 namespace Phoenix.NET.Utility;
 
-public static class WindowUtility
+internal static class WindowUtility
 {
     public static IEnumerable<IntPtr> GetWindows(Process process)
     {
