@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Title>PhoenixWrapped</Title>
+        <Authors>Roxeez</Authors>
+        <Nullable>disable</Nullable>
+        <Description>.NET client to easily interact with PhoenixBot</Description>
+        <PackageProjectUrl>https://github.com/Roxeez/PhoenixWrapped</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/Roxeez/PhoenixWrapped</RepositoryUrl>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>C#, Nostale, PhoenixBot</PackageTags>
+        <IsPackable>true</IsPackable>
+        <Configurations>Debug;Release</Configurations>
+        <PackageId>PhoenixWrapped</PackageId>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="../../LICENSE" Pack="true" Visible="false" PackagePath="" />
+        <None Include="../../README.md" Pack="true" Visible="false" PackagePath="" />
+    </ItemGroup>
+
+</Project>

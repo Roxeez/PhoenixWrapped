@@ -1,4 +1,4 @@
-# Phoenix.NET
+# PhoenixWrapped
 This library was made to easily interact with [Phoenix Bot API](https://github.com/hatz2/PhoenixAPI) using C#
 
 ### This library is still in development and is not yet feature complete.
@@ -6,18 +6,18 @@ This library was made to easily interact with [Phoenix Bot API](https://github.c
 ## Installation
 Using Package Manager
 ```shell
-Install-Package Phoenix.NET
+Install-Package PhoenixWrapped
 ```
 
 Using .NET CLI
 ```shell
-dotnet add package Phoenix.NET
+dotnet add package PhoenixWrapped
 ```
 ## Usage
 ```csharp
-using Phoenix.NET;
-using Phoenix.NET.Messaging.Packet;
-using Phoenix.NET.Messaging.Query;
+using PhoenixWrapped;
+using PhoenixWrapped.Messaging.Packet;
+using PhoenixWrapped.Messaging.Query;
 
 var client = PhoenixClientFactory.CreateByCharacterName("Rox");
 
