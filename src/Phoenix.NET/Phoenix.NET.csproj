@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Title>RiotConnector</Title>
+        <Authors>Roxeez</Authors>
+        <Company>InHouseFactory</Company>
+        <Nullable>disable</Nullable>
+        <Description>.NET client to easily interact with PhoenixBot</Description>
+        <PackageProjectUrl>https://github.com/Roxeez/Phoenix.NET</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/Roxeez/Phoenix.NET</RepositoryUrl>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>C#, Nostale, PhoenixBot</PackageTags>
+        <IsPackable>true</IsPackable>
+        <Configurations>Debug;Release</Configurations>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    </ItemGroup>
+
+</Project>

@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
+using Phoenix.NET.Messaging.Combat;
+using Phoenix.NET.Messaging.Interaction;
+using Phoenix.NET.Messaging.Movement;
 using Phoenix.NET.Messaging.Packet;
+using Phoenix.NET.Messaging.Query;
 
 namespace Phoenix.NET.Messaging;
 
@@ -11,7 +15,12 @@ public class MessageFactory
     private readonly Dictionary<MessageType, Type> mappings = new()
     {
         [MessageType.PacketReceived] = typeof(PacketReceived),
-        [MessageType.PacketSend] = typeof(PacketSend)
+        [MessageType.PacketSend] = typeof(PacketSend),
+        [MessageType.QueryPlayer] = typeof(QueryPlayer),
+        [MessageType.Attack] = typeof(Attack),
+        [MessageType.Collect] = typeof(Collect),
+        [MessageType.PlayerWalk] = typeof(PlayerWalk),
+        [MessageType.PickUp] = typeof(PickUp)
     };
     
     public Message CreateMessage(byte[] buffer)
@@ -31,7 +40,7 @@ public class MessageFactory
         var type = mappings.GetValueOrDefault(message.Type);
         if (type is null)
         {
-            throw new InvalidOperationException($"Undefined message type: {message.Type}");
+            return default;
         }
 
         var typedMessage = JsonConvert.DeserializeObject(json, type) as Message;

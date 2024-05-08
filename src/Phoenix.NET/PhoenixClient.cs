@@ -41,26 +41,33 @@ public class PhoenixClient : IDisposable
         
         while (!cts.IsCancellationRequested)
         {
-            var buffer = new byte[4096];
-            var size = await stream.ReadAsync(buffer, cts.Token);
-            
-            Array.Resize(ref buffer, size);
-
-            tmp.AddRange(buffer);
-            
-            var eof = Array.IndexOf<byte>(tmp.ToArray(), 0x01);
-            while (eof != -1)
+            try
             {
-                var msg = tmp.Take(eof).ToArray();
-                var message = factory.CreateMessage(msg);
-                
-                if (message is not null)
+                var buffer = new byte[4096];
+                var size = await stream.ReadAsync(buffer, cts.Token);
+            
+                Array.Resize(ref buffer, size);
+
+                tmp.AddRange(buffer);
+            
+                var eof = Array.IndexOf<byte>(tmp.ToArray(), 0x01);
+                while (eof != -1)
                 {
-                    MessageReceived?.Invoke(message);
-                }
+                    var msg = tmp.Take(eof).ToArray();
+                    var message = factory.CreateMessage(msg);
                 
-                tmp = tmp.Skip(eof + 1).ToList();
-                eof = Array.IndexOf<byte>(tmp.ToArray(), 0x01);
+                    if (message is not null)
+                    {
+                        MessageReceived?.Invoke(message);
+                    }
+                
+                    tmp = tmp.Skip(eof + 1).ToList();
+                    eof = Array.IndexOf<byte>(tmp.ToArray(), 0x01);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
         }
     }
@@ -69,6 +76,5 @@ public class PhoenixClient : IDisposable
     {
         cts.Cancel();
         client.Dispose();
-        task.Wait();
     }
 }
