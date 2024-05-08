@@ -10,17 +10,22 @@ using Phoenix.NET.Messaging.Query;
 
 namespace Phoenix.NET.Messaging;
 
-public class MessageFactory
+internal class MessageFactory
 {
     private readonly Dictionary<MessageType, Type> mappings = new()
     {
         [MessageType.PacketReceived] = typeof(PacketReceived),
         [MessageType.PacketSend] = typeof(PacketSend),
         [MessageType.QueryPlayer] = typeof(QueryPlayer),
+        [MessageType.QuerySkills] = typeof(QuerySkills),
         [MessageType.Attack] = typeof(Attack),
+        [MessageType.PlayerSkill] = typeof(PlayerSkill),
+        [MessageType.PartnerSkill] = typeof(PartnerSkill),
+        [MessageType.PetSkill] = typeof(PetSkill),
         [MessageType.Collect] = typeof(Collect),
         [MessageType.PlayerWalk] = typeof(PlayerWalk),
-        [MessageType.PickUp] = typeof(PickUp)
+        [MessageType.PetsWalk] = typeof(PetsWalk),
+        [MessageType.PickUp] = typeof(PickUp),
     };
     
     public Message CreateMessage(byte[] buffer)
