@@ -13,32 +13,8 @@ public class QueryPlayer : Message
     }
 }
 
-public class PlayerInfo
+public class OwnPlayerInfo : PlayerInfo
 {
-    [JsonProperty("id")]
-    public long Id { get; init; }
-    
-    [JsonProperty("name")]
-    public string Name { get; init; }
-    
-    [JsonProperty("x")]
-    public int X { get; init; }
-    
-    [JsonProperty("y")]
-    public int Y { get; init; }
-    
-    [JsonProperty("level")]
-    public int Level { get; init; }
-    
-    [JsonProperty("champion_level")]
-    public int ChampionLevel { get; init; }
-    
-    [JsonProperty("hp_percent")]
-    public int HpPercent { get; init; }
-    
-    [JsonProperty("mp_percent")]
-    public int MpPercent { get; init; }
-    
     [JsonProperty("map_id")]
     public int MapId { get; init; }
     
