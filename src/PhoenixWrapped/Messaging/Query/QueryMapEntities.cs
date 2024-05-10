@@ -25,7 +25,7 @@ public class QueryMapEntities : Message
 public class PlayerInfo
 {
     [JsonProperty("id")]
-    public long Id { get; init; }
+    public int Id { get; init; }
     
     [JsonProperty("name")]
     public string Name { get; init; }
@@ -55,7 +55,7 @@ public class NpcInfo
     public string Name { get; init; }
     
     [JsonProperty("id")]
-    public long Id { get; init; }
+    public int Id { get; init; }
     
     [JsonProperty("x")]
     public int X { get; init; }
@@ -94,5 +94,5 @@ public class ItemInfo
     public int OwnerId { get; init; }
     
     [JsonProperty("id")]
-    public long Id { get; init; }
+    public int Id { get; init; }
 }
