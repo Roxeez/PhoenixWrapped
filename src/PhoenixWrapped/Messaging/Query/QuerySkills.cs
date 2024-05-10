@@ -4,7 +4,7 @@ namespace PhoenixWrapped.Messaging.Query;
 
 public class QuerySkills : Message
 {
-    [JsonProperty("skills")]
+    [JsonProperty("skills", NullValueHandling = NullValueHandling.Ignore)]
     public List<SkillInfo> Skills { get; init; }
     
     public QuerySkills()

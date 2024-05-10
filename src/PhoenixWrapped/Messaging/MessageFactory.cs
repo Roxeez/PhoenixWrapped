@@ -24,6 +24,8 @@ internal class MessageFactory
         [MessageType.PlayerWalk] = typeof(PlayerWalk),
         [MessageType.PetsWalk] = typeof(PetsWalk),
         [MessageType.PickUp] = typeof(PickUp),
+        [MessageType.QueryMapEntities] = typeof(QueryMapEntities),
+        [MessageType.QueryInventory] = typeof(QueryInventory)
     };
     
     public Message CreateMessage(byte[] buffer)

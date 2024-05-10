@@ -4,16 +4,16 @@ namespace PhoenixWrapped.Messaging.Query;
 
 public class QueryMapEntities : Message
 {
-    [JsonProperty("npcs")]
+    [JsonProperty("npcs", NullValueHandling = NullValueHandling.Ignore)]
     public List<NpcInfo> Npcs { get; init; }
     
-    [JsonProperty("monsters")]
+    [JsonProperty("monsters", NullValueHandling = NullValueHandling.Ignore)]
     public List<NpcInfo> Monsters { get; init; }
     
-    [JsonProperty("items")]
+    [JsonProperty("items", NullValueHandling = NullValueHandling.Ignore)]
     public List<ItemInfo> Items { get; init; }
     
-    [JsonProperty("players")]
+    [JsonProperty("players", NullValueHandling = NullValueHandling.Ignore)]
     public List<PlayerInfo> Players { get; init; }
     
     public QueryMapEntities()
