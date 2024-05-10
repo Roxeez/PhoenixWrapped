@@ -5,7 +5,7 @@ namespace PhoenixWrapped.Messaging.Query;
 public class QueryPlayer : Message
 {
     [JsonProperty("player_info", NullValueHandling = NullValueHandling.Ignore)]
-    public PlayerInfo PlayerInfo { get; init; }
+    public OwnPlayerInfo PlayerInfo { get; init; }
     
     public QueryPlayer()
     {
