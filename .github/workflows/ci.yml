@@ -58,7 +58,7 @@ jobs:
           --skip-duplicate
           
       - name: .NET Nuget Official
-        run: dotnet nuget push **/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
+        run: dotnet nuget push **/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_OFFICIAL_TOKEN }} --skip-duplicate
 
       - name: Create tag
         uses: mathieudutour/github-tag-action@v6.1
