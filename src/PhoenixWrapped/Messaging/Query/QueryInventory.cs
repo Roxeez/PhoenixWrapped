@@ -4,14 +4,8 @@ namespace PhoenixWrapped.Messaging.Query;
 
 public class QueryInventory : Message
 {
-    [JsonProperty("equip", NullValueHandling = NullValueHandling.Ignore)]
-    public List<InventoryItemInfo> Equip { get; init; }
-    
-    [JsonProperty("main", NullValueHandling = NullValueHandling.Ignore)]
-    public List<InventoryItemInfo> Main { get; init; }
-    
-    [JsonProperty("etc", NullValueHandling = NullValueHandling.Ignore)]
-    public List<InventoryItemInfo> Etc { get; init; }
+    [JsonProperty("inventory", NullValueHandling = NullValueHandling.Ignore)]
+    public InventoryInfo Inventory { get; init; }
     
     [JsonProperty("gold", NullValueHandling = NullValueHandling.Ignore)]
     public int Gold { get; init; }
@@ -20,6 +14,18 @@ public class QueryInventory : Message
     {
         Type = MessageType.QueryInventory;
     }
+}
+
+public class InventoryInfo
+{
+    [JsonProperty("equip", NullValueHandling = NullValueHandling.Ignore)]
+    public List<InventoryItemInfo> Equip { get; init; }
+    
+    [JsonProperty("main", NullValueHandling = NullValueHandling.Ignore)]
+    public List<InventoryItemInfo> Main { get; init; }
+    
+    [JsonProperty("etc", NullValueHandling = NullValueHandling.Ignore)]
+    public List<InventoryItemInfo> Etc { get; init; }
 }
 
 public class InventoryItemInfo
