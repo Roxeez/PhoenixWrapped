@@ -36,7 +36,7 @@ public class InventoryItemInfo
     [JsonProperty("name")]
     public string Name { get; init; }
     
-    [JsonProperty("slot")]
+    [JsonProperty("position")]
     public int Slot { get; init; }
     
     [JsonProperty("vnum")]
