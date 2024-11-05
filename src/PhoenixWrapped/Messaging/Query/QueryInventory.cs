@@ -7,9 +7,6 @@ public class QueryInventory : Message
     [JsonProperty("inventory", NullValueHandling = NullValueHandling.Ignore)]
     public InventoryInfo Inventory { get; init; }
     
-    [JsonProperty("gold", NullValueHandling = NullValueHandling.Ignore)]
-    public int Gold { get; init; }
-    
     public QueryInventory()
     {
         Type = MessageType.QueryInventory;
@@ -18,6 +15,9 @@ public class QueryInventory : Message
 
 public class InventoryInfo
 {
+    [JsonProperty("gold", NullValueHandling = NullValueHandling.Ignore)]
+    public int Gold { get; init; }
+    
     [JsonProperty("equip", NullValueHandling = NullValueHandling.Ignore)]
     public List<InventoryItemInfo> Equip { get; init; }
     
