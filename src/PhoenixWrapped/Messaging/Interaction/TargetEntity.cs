@@ -16,16 +16,9 @@ namespace PhoenixWrapped.Messaging.Interaction
         [JsonProperty("entity_id")]
         public int EntityId { get; set; }
 
-        // Default constructor
-        public TargetEntity() : base(MessageType.TargetEntity)
+        public TargetEntity()
         {
-        }
-
-        // Constructor with parameters
-        public TargetEntity(EntityType entityType, int entityId) : base(MessageType.TargetEntity)
-        {
-            EntityType = entityType;
-            EntityId = entityId;
+            Type = MessageType.TargetEntity;
         }
     }
 }
