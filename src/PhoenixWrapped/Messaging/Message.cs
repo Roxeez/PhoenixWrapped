@@ -23,7 +23,8 @@ public enum MessageType : byte
     QueryPlayer,
     QueryInventory,
     QuerySkills,
-    QueryMapEntities
+    QueryMapEntities,
+    TargetEntity
 }
 
 public class Message
