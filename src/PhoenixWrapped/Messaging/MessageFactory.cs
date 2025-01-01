@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using Newtonsoft.Json;
+using PhoenixWrapped.Messaging.Bot;
 using PhoenixWrapped.Messaging.Combat;
 using PhoenixWrapped.Messaging.Interaction;
 using PhoenixWrapped.Messaging.Movement;
@@ -25,7 +26,11 @@ internal class MessageFactory
         [MessageType.PetsWalk] = typeof(PetsWalk),
         [MessageType.PickUp] = typeof(PickUp),
         [MessageType.QueryMapEntities] = typeof(QueryMapEntities),
-        [MessageType.QueryInventory] = typeof(QueryInventory)
+        [MessageType.QueryInventory] = typeof(QueryInventory),
+        [MessageType.StartBot] = typeof(StartBot),
+        [MessageType.StopBot] = typeof(StopBot),
+        [MessageType.ContinueBot] = typeof(ContinueBot),
+        [MessageType.TargetEntity] = typeof(TargetEntity)
     };
     
     public Message CreateMessage(byte[] buffer)
