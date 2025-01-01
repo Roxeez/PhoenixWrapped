@@ -60,9 +60,9 @@ public class PhoenixClient : IDisposable
                     eof = Array.IndexOf<byte>(tmp.ToArray(), 0x01);
                 }
             }
-            catch (Exception e)
+            catch (TaskCanceledException)
             {
-                Console.WriteLine(e.Message);
+                // Ignored
             }
         }
     }
