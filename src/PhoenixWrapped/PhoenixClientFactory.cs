@@ -1,7 +1,8 @@
-﻿
-using System.Diagnostics;
+﻿using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using PhoenixWrapped.Utility;
 
+[assembly: InternalsVisibleTo("PhoenixWrapped.Tests")]
 namespace PhoenixWrapped
 {
     public class Window

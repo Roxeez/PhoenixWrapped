@@ -48,6 +48,9 @@ jobs:
       - name: .NET Build
         run: dotnet build --no-restore -c Release /p:Version=${{ steps.versioning.outputs.new_tag }}
 
+      - name: .NET Tests
+        run: dotnet test -c Release --no-build /p:Version=${{ steps.versioning.outputs.new_tag }}
+
       - name: .NET Pack
         run: dotnet pack -c Release --no-build /p:Version=${{ steps.versioning.outputs.new_tag }}
 

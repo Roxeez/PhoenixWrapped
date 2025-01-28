@@ -30,7 +30,7 @@ internal class MessageFactory
         [MessageType.StartBot] = typeof(StartBot),
         [MessageType.StopBot] = typeof(StopBot),
         [MessageType.ContinueBot] = typeof(ContinueBot),
-        [MessageType.TargetEntity] = typeof(TargetEntity)
+        [MessageType.TargetEntity] = typeof(TargetEntity),
     };
     
     public Message CreateMessage(byte[] buffer)
@@ -74,4 +74,6 @@ internal class MessageFactory
 
         return buffer;
     }
+    
+    internal IReadOnlyDictionary<MessageType, Type> GetMappings() => mappings;
 }
