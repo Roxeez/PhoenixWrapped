@@ -87,7 +87,10 @@ namespace PhoenixWrapped
                         .Split(' ')[2]
                         .Replace("]", "");
 
-                    if (!int.TryParse(title[(title.IndexOf(':') + 1)..], out var port))
+                    var raw = title[(title.IndexOf(':') + 1)..];
+                    var ports = raw.Split(' ');
+                    
+                    if (!int.TryParse(ports[0], out var port))
                     {
                         continue;
                     }
